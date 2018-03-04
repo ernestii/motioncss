@@ -6,6 +6,7 @@ $(document).ready(function() {
   // When the switch is clicked
   $sw.on('click', function() {
     $sw.toggleClass('active');
+    $('body').toggleClass('night');
   });
 
 });

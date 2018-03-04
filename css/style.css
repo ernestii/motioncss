@@ -1,5 +1,6 @@
-body.day {
-  background-color: #fff;
+body {
+  transition: all ease 0.3s;
+  background-color: #2EB5E5;
 }
 
 body.night {
@@ -10,7 +11,7 @@ body.night {
   margin: 0 auto;
   margin-top: 30vh;
   
-  background-color: #eee;
+  background-color: rgba(255,255,255,0.2);
 
   width: 300px;
   height: 100px;
@@ -23,12 +24,18 @@ body.night {
   transition: all ease 0.3s;
 }
 
-.switch.active {
-  background-color: #ccc;
-}
 
+/* The toggle is styles as the Sun in Day mode or as the  Moon in Night mode */
 .toggle {
-  background: blue;
+  background-color: #fff;
+  background-position: center center;
+  background-size: 100%;
+
+  /* White pixel background image to enable background-image transition */
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+
+  box-shadow: rgba(255,255,255,0.7) 0 0 83px 40px;
+
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -38,6 +45,75 @@ body.night {
   position: absolute;
 }
 
+/* Sunrays are visible by default and positioned in the center of switch toggle */
+.sunrays {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: -150px;
+  top: -150px;
+  
+  background-image: url(../images/sunrays.svg);
+  background-position: center center;
+  background-size: 100%;
+
+  opacity: .2;
+
+  animation-name: sunrays;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  visibility: visible;
+
+  transition: all .3s ease;
+}
+
+/* Animation for sunrays: rotation and changing opacity */
+@keyframes sunrays {
+  0% {
+    transform: rotate(0deg);
+    opacity: .2;
+  }
+
+  25% {
+    transform: rotate(90deg);
+    opacity: .4;
+  }
+
+  50% {
+    transform: rotate(180deg);
+    opacity: .2;
+  }
+  
+  75% {
+    transform: rotate(270deg);
+    opacity: .4;
+  }
+
+  100% {
+    opacity: .2;
+    transform: rotate(360deg)
+  }
+}
+
+/* Styles for "active" switch – night mode */
+.switch.active {
+  background-color: #222;
+}
+
+/* Set background-image to the Moon picture, stick to the right hand side */
 .switch.active .toggle {
   left: calc(300px - 100px);
+  background-color: #fff;
+  box-shadow: rgba(255,255,255,0.8) 0 0 50px;
+  background-image: url(../images/moon.png);
+}
+
+/* Hide sunrays */
+.switch.active .sunrays {
+  opacity: 0;
+  background: none;
+  visibility: hidden;
+  left: 50px;
 }
