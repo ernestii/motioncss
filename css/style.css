@@ -1,5 +1,5 @@
 body {
-  transition: all ease 0.3s;
+  transition: all ease 0.8s;
   background-color: #2EB5E5;
 }
 
@@ -21,7 +21,7 @@ body.night {
 
   cursor: pointer;
 
-  transition: all ease 0.3s;
+  transition: all ease 0.5s;
 }
 
 
@@ -36,12 +36,14 @@ body.night {
 
   box-shadow: rgba(255,255,255,0.7) 0 0 83px 40px;
 
+  transform: rotate(-90deg);
+
   width: 100px;
   height: 100px;
   border-radius: 50px;
   left: 0;
 
-  transition: all ease 0.3s;
+  transition: all ease 0.5s;
   position: absolute;
 }
 
@@ -66,7 +68,7 @@ body.night {
   
   visibility: visible;
 
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 
 /* Animation for sunrays: rotation and changing opacity */
@@ -99,7 +101,7 @@ body.night {
 
 /* Styles for "active" switch – night mode */
 .switch.active {
-  background-color: #222;
+  background-color: rgba(255,255,255,0.15);
 }
 
 /* Set background-image to the Moon picture, stick to the right hand side */
@@ -107,6 +109,7 @@ body.night {
   left: calc(300px - 100px);
   background-color: #fff;
   box-shadow: rgba(255,255,255,0.8) 0 0 50px;
+  transform: rotate(0);
   background-image: url(../images/moon.png);
 }
 
