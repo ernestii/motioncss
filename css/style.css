@@ -8,6 +8,8 @@ body.night {
 }
 
 .switch {
+  z-index: 2;
+
   margin: 0 auto;
   margin-top: 30vh;
   
@@ -119,4 +121,44 @@ body.night {
   background: none;
   visibility: hidden;
   left: 50px;
+}
+
+
+/* Clouds */
+.cloud {
+  position: fixed;
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  bottom: 1vh;
+  opacity: .6;
+}
+
+.cloud-1 {
+  background-image: url(../images/clouds/010.png);
+}
+
+.cloud-2 {
+  background-image: url(../images/clouds/015.png);
+  right: 60%;
+}
+
+.cloud-3 {
+  background-image: url(../images/clouds/009.png);
+  right: 40%;
+}
+
+.cloud-4 {
+  background-image: url(../images/clouds/001.png);
+  right: 20%;
+}
+
+.cloud-5 {
+  background-image: url(../images/clouds/010.png);
+  right: 0;
 }
